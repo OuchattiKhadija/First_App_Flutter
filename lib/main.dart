@@ -92,34 +92,33 @@ class Login extends StatelessWidget {
 //2 - child : Card Container SizdBox and Etc  //accept child
 //3 - Children : Collumn Row Stack ListView GridView //accept more than one child
 //4 - Scaffold MaterialApp
+
 class ColumnAndRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Container(
-          color: Colors.yellow,
-          width: double.infinity,
-          height: 500,
-          child: Stack(
-            //if children size big than stack size to set visible oversize
-      //      overflow: Overflow.visible,
-//            alignment: Alignment.center,
-            children: [
-              Positioned( 
-                top: 100,
-                left: 100,
-                right: 30,
-                height: 60,
+        body: Row(
+          children: [
+            Expanded(
+              //linear layout weight 2 => in flutter flex in Expended 
+              flex: 2,
                 child: Container(
-                  color: Colors.red,
-                  width: 200,
-                  height: 200,
-                ),
-              ),
-            ],
-          ),
+              child: Text("child txt 1"),
+              color: Colors.blue,
+            )),
+            Expanded(
+                child: Container(
+              child: Text("child txt 2"),
+              color: Colors.brown,
+            )),
+            Expanded(
+                child: Container(
+              child: Text("child txt 3"),
+              color: Colors.green,
+            )),
+          ],
         ));
   }
 }
