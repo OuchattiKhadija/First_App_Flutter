@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Login(),
+      home: ColumnAndRow(),
     );
   }
 }
@@ -62,20 +62,21 @@ class Login extends StatelessWidget {
         appBar: AppBar(),
         drawer: Drawer(),
         body: Card(
-          color: Colors.blueGrey,
-          elevation: 10,
-          margin: EdgeInsets.all(10),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          child: Text(
-            "Card Text",
-            style: TextStyle(color: Colors.redAccent, fontSize: 20),
-            textAlign: TextAlign.center,
-          ),
-        ));
+            color: Colors.blueGrey,
+            elevation: 10,
+            margin: EdgeInsets.all(10),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            child: Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                "Card Text",
+                style: TextStyle(color: Colors.redAccent, fontSize: 20),
+                textAlign: TextAlign.center,
+              ),
+            )));
   }
 }
-
 
 //image providers
 //1- NetworkImage  :  load from network internet
@@ -85,3 +86,63 @@ class Login extends StatelessWidget {
 //1- add packages / plugins ..
 //2- folder for images and files
 //3- fonts
+
+//widget types
+//1 - speific like Text Image.asset Image.network
+//2 - child : Card Container SizdBox and Etc  //accept child
+//3 - Children : Collumn Row Stack ListView GridView //accept more than one child
+//4 - Scaffold MaterialApp
+class ColumnAndRow extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(),
+        drawer: Drawer(),
+        body: Column(
+          children: [
+            Text(
+              "child 1 text",
+              style: TextStyle(color: Colors.redAccent, fontSize: 20),
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              "child 2 text",
+              style: TextStyle(color: Colors.redAccent, fontSize: 20),
+              textAlign: TextAlign.center,
+            ),
+            Card(
+                color: Colors.blueGrey,
+                elevation: 10,
+                margin: EdgeInsets.all(10),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text(
+                    "Card children Text",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    textAlign: TextAlign.center,
+                  ),
+                )),
+            Container(
+                width: 200,
+                margin: EdgeInsets.all(30.0),
+                decoration: BoxDecoration(
+                  color: Colors.amberAccent,
+                  border: Border.all(color: Colors.black, width: 3),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Text(
+                  " Hello World!",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.blue.shade900,
+                    fontWeight: FontWeight.w200,
+                    letterSpacing: 1.2,
+                    wordSpacing: 5.0,
+                  ),
+                ))
+          ],
+        ));
+  }
+}
