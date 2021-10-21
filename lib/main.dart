@@ -98,7 +98,14 @@ class ColumnAndRow extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Column(
+        body: Container(color: Colors.teal,
+        child:Column(
+        //  mainAxisSize: MainAxisSize.min,
+        //same space between widget 
+        // mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.center,
+        //align Horizontaly
+        crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "child 1 text",
@@ -143,6 +150,7 @@ class ColumnAndRow extends StatelessWidget {
                   ),
                 ))
           ],
-        ));
+        ) ,)
+         );
   }
 }
