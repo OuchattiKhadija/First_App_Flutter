@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -65,6 +65,7 @@ class Login extends StatelessWidget {
             //color: Colors.amberAccent,
             width: 400,
             height: 200,
+            alignment: Alignment.center,
             //margin top & right & left & bottom
             margin: EdgeInsets.all(30.0),
             //margin only left & right
@@ -74,21 +75,28 @@ class Login extends StatelessWidget {
             //margin using fromLTRB
             //  margin: const EdgeInsets.fromLTRB(10, 20, 10, 15),
             //   padding: EdgeInsets.all(40.0),
-            decoration: BoxDecoration(
-                color: Colors.amberAccent,
+            decoration: BoxDecoration(color: Colors.amberAccent,
                 // border: Border.all(color :Colors.black,width:3),
                 //   borderRadius: BorderRadius.circular(10),
                 //border in one side or 2 or ..
                 //border : Border(bottom: BorderSide(color: Colors.blue,width: 10),right: BorderSide(color: Colors.blue,width: 20) ),
-                image: DecorationImage(
+                /*image: DecorationImage(
                   fit: BoxFit.fitHeight,
                   //image: NetworkImage("https://i.imgur.com/UAn5HHb.png"),
                   image : AssetImage("images/flutter.png"),
                   //repat image inaxe x
                   repeat: ImageRepeat.repeatX,
-                )),
+                )*/
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black,
+                      blurRadius: 20.0,
+                      spreadRadius: 3,
+                      offset: Offset(-10, 10))
+                ]),
             child: Text(
               " Hello World!",
+              textAlign: TextAlign.end,
               style: TextStyle(
                 fontSize: 20.0,
                 color: Colors.blue.shade900,
