@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -61,7 +63,8 @@ class Login extends StatelessWidget {
         drawer: Drawer(),
         body: Container(
             //color: Colors.amberAccent,
-            width: 200,
+            width: 400,
+            height: 200,
             //margin top & right & left & bottom
             margin: EdgeInsets.all(30.0),
             //margin only left & right
@@ -72,24 +75,40 @@ class Login extends StatelessWidget {
             //  margin: const EdgeInsets.fromLTRB(10, 20, 10, 15),
             //   padding: EdgeInsets.all(40.0),
             decoration: BoxDecoration(
-              color: Colors.amberAccent,
-              border: Border.all(color :Colors.black,width:3),
-              borderRadius: BorderRadius.circular(10),
-              //border in one side or 2 or ..
-              //border : Border(bottom: BorderSide(color: Colors.blue,width: 10),right: BorderSide(color: Colors.blue,width: 20) )
-            ),
+                color: Colors.amberAccent,
+                // border: Border.all(color :Colors.black,width:3),
+                //   borderRadius: BorderRadius.circular(10),
+                //border in one side or 2 or ..
+                //border : Border(bottom: BorderSide(color: Colors.blue,width: 10),right: BorderSide(color: Colors.blue,width: 20) ),
+                image: DecorationImage(
+                  fit: BoxFit.fitHeight,
+                  //image: NetworkImage("https://i.imgur.com/UAn5HHb.png"),
+                  image : AssetImage("images/flutter.png"),
+                  //repat image inaxe x
+                  repeat: ImageRepeat.repeatX,
+                )),
             child: Text(
               " Hello World!",
               style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.blue.shade900,
-                  fontWeight: FontWeight.w200,
-                  letterSpacing: 1.2,
-                  wordSpacing: 5.0,
-                 // backgroundColor: Colors.lime,
+                fontSize: 20.0,
+                color: Colors.blue.shade900,
+                fontWeight: FontWeight.w200,
+                letterSpacing: 1.2,
+                wordSpacing: 5.0,
+                // backgroundColor: Colors.lime,
                 //  decoration: TextDecoration.lineThrough
-                ),
+              ),
               //textDirection: TextDirection.ltr,
             )));
   }
 }
+
+
+//image providers
+//1- NetworkImage  :  load from network internet
+//2- AssetImage   :  load from MyApp asset
+
+//pubSpec.yaml
+//1- add packages / plugins ..
+//2- folder for images and files
+//3- fonts
