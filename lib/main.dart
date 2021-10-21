@@ -99,13 +99,27 @@ class ColumnAndRow extends StatelessWidget {
         appBar: AppBar(),
         drawer: Drawer(),
         body: Container(
-          color: Colors.teal,
+          color: Colors.yellow,
+          width: double.infinity,
+          height: 500,
           child: Stack(
+            alignment: Alignment.center,
             children: [
-           Container (color: Colors.blue,width: 400,height: 400,),
-           Container (color: Colors.red,width: 300,height: 300,),
-           Container (color: Colors.green,width: 200,height: 200),
-           Text('szqrrqezr',style: TextStyle(color: Colors.brown),),
+              Container(
+                color: Colors.blue,
+                width: 300,
+                height: 300,
+              ),
+              Container(
+                color: Colors.red,
+                width: 200,
+                height: 200,
+              ),
+              Container(color: Colors.green, width: 100, height: 100),
+              Text(
+                'szqrrqezr',
+                style: TextStyle(color: Colors.brown),
+              ),
             ],
           ),
         ));
