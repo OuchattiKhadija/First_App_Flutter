@@ -99,7 +99,29 @@ class ColumnAndRow extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Icon(Icons.access_alarm_sharp,size: 60,color:Colors.blue)
-        );
+        body: Column(
+          children: [
+            Text("column 1", style: TextStyle(fontSize: 20)),
+            Divider(
+              color: Colors.black,
+              height: 70,
+              thickness: 10,
+            ),
+            Text("column 2", style: TextStyle(fontSize: 20)),
+           Container(
+             height:200,
+             child:  Row(
+              children: [
+                Text("Row 1", style: TextStyle(fontSize: 20)),
+                VerticalDivider(
+                  color: Colors.black,
+                  width: 70,
+                  thickness: 10.90,
+                ),
+                Text("Row 2", style: TextStyle(fontSize: 20)),
+              ],
+            ),)
+          ],
+        ));
   }
 }
