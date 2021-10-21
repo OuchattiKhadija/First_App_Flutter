@@ -100,29 +100,12 @@ class ColumnAndRow extends StatelessWidget {
         drawer: Drawer(),
         body: Container(
           color: Colors.teal,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+          child: Stack(
             children: [
-              Text(
-              "child 2 text",
-              style: TextStyle(color: Colors.redAccent, fontSize: 20),
-              textAlign: TextAlign.center,
-            ),
-            Card(
-                color: Colors.blueGrey,
-                elevation: 10,
-                margin: EdgeInsets.all(10),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text(
-                    "Card children Text",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                    textAlign: TextAlign.center,
-                  ),
-                )),
+           Container (color: Colors.blue,width: 400,height: 400,),
+           Container (color: Colors.red,width: 300,height: 300,),
+           Container (color: Colors.green,width: 200,height: 200),
+           Text('szqrrqezr',style: TextStyle(color: Colors.brown),),
             ],
           ),
         ));
