@@ -103,22 +103,20 @@ class ColumnAndRow extends StatelessWidget {
           width: double.infinity,
           height: 500,
           child: Stack(
-            alignment: Alignment.center,
+            //if children size big than stack size to set visible oversize
+      //      overflow: Overflow.visible,
+//            alignment: Alignment.center,
             children: [
-              Container(
-                color: Colors.blue,
-                width: 300,
-                height: 300,
-              ),
-              Container(
-                color: Colors.red,
-                width: 200,
-                height: 200,
-              ),
-              Container(color: Colors.green, width: 100, height: 100),
-              Text(
-                'szqrrqezr',
-                style: TextStyle(color: Colors.brown),
+              Positioned( 
+                top: 100,
+                left: 100,
+                right: 30,
+                height: 60,
+                child: Container(
+                  color: Colors.red,
+                  width: 200,
+                  height: 200,
+                ),
               ),
             ],
           ),
