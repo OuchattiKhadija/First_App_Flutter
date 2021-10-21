@@ -99,26 +99,7 @@ class ColumnAndRow extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Row(
-          children: [
-            Expanded(
-              //linear layout weight 2 => in flutter flex in Expended 
-              flex: 2,
-                child: Container(
-              child: Text("child txt 1"),
-              color: Colors.blue,
-            )),
-            Expanded(
-                child: Container(
-              child: Text("child txt 2"),
-              color: Colors.brown,
-            )),
-            Expanded(
-                child: Container(
-              child: Text("child txt 3"),
-              color: Colors.green,
-            )),
-          ],
-        ));
+        body: Icon(Icons.access_alarm_sharp,size: 60,color:Colors.blue)
+        );
   }
 }
