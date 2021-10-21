@@ -98,21 +98,13 @@ class ColumnAndRow extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Container(color: Colors.teal,
-        child:Column(
-        //  mainAxisSize: MainAxisSize.min,
-        //same space between widget 
-        // mainAxisAlignment: MainAxisAlignment.spaceAround,
-        mainAxisAlignment: MainAxisAlignment.center,
-        //align Horizontaly
-        crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "child 1 text",
-              style: TextStyle(color: Colors.redAccent, fontSize: 20),
-              textAlign: TextAlign.center,
-            ),
-            Text(
+        body: Container(
+          color: Colors.teal,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
               "child 2 text",
               style: TextStyle(color: Colors.redAccent, fontSize: 20),
               textAlign: TextAlign.center,
@@ -131,26 +123,8 @@ class ColumnAndRow extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 )),
-            Container(
-                width: 200,
-                margin: EdgeInsets.all(30.0),
-                decoration: BoxDecoration(
-                  color: Colors.amberAccent,
-                  border: Border.all(color: Colors.black, width: 3),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Text(
-                  " Hello World!",
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    color: Colors.blue.shade900,
-                    fontWeight: FontWeight.w200,
-                    letterSpacing: 1.2,
-                    wordSpacing: 5.0,
-                  ),
-                ))
-          ],
-        ) ,)
-         );
+            ],
+          ),
+        ));
   }
 }
