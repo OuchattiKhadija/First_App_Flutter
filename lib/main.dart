@@ -61,13 +61,16 @@ class Login extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Container(
-          margin: EdgeInsets.all(10.0),
-          child: Image.network(
-            "https://i.imgur.com/UAn5HHb.png",
-            fit: BoxFit.fill,
-            width: double.infinity,
-            height: 300,
+        body: Card(
+          color: Colors.blueGrey,
+          elevation: 10,
+          margin: EdgeInsets.all(10),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          child: Text(
+            "Card Text",
+            style: TextStyle(color: Colors.redAccent, fontSize: 20),
+            textAlign: TextAlign.center,
           ),
         ));
   }
