@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ExampleOneCorig(),
+      home: HomePage(),
     );
   }
 }
@@ -95,9 +95,9 @@ class ExampleOneCorig extends StatelessWidget {
                                 size: 40,
                               ),
                               Padding(
-                                padding: EdgeInsets.all(10),
-                                child:Text("Feed")), 
-                                Text("2 - 4"),
+                                  padding: EdgeInsets.all(10),
+                                  child: Text("Feed")),
+                              Text("2 - 4"),
                             ],
                           ),
                           Column(
@@ -108,9 +108,9 @@ class ExampleOneCorig extends StatelessWidget {
                                 size: 40,
                               ),
                               Padding(
-                                padding: EdgeInsets.all(10),
-                                child:Text("Feed")), 
-                                Text("2 - 4"),
+                                  padding: EdgeInsets.all(10),
+                                  child: Text("Feed")),
+                              Text("2 - 4"),
                             ],
                           ),
                           Column(
@@ -121,9 +121,9 @@ class ExampleOneCorig extends StatelessWidget {
                                 size: 40,
                               ),
                               Padding(
-                                padding: EdgeInsets.all(10),
-                                child:Text("Feed")), 
-                                Text("2 - 4"),
+                                  padding: EdgeInsets.all(10),
+                                  child: Text("Feed")),
+                              Text("2 - 4"),
                             ],
                           )
                         ],
@@ -272,35 +272,29 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Row(
-          children: [
-            Text("text test ",
-                style: TextStyle(
-                    fontSize: 30.0,
-                    color: Colors.blue.shade900,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 2.2,
-                    wordSpacing: 5.0,
-                    shadows: const [
-                      Shadow(
-                          color: Colors.redAccent,
-                          blurRadius: 2.0,
-                          offset: Offset(2, 10.0))
-                    ],
-                    decoration: TextDecoration.underline)),
-            Text(
-              " \n 9000\$",
-              style: TextStyle(
-                  fontSize: 30.0,
-                  color: Colors.blue.shade900,
-                  fontWeight: FontWeight.w200,
-                  letterSpacing: 1.2,
-                  wordSpacing: 5.0,
-                  decoration: TextDecoration.lineThrough),
-              textDirection: TextDirection.ltr,
-            ),
-          ],
-        ));
+        body: Container(
+            child: IndexedStack(
+              index: 1,
+              children: [
+          //index0
+          Container(
+            color: Colors.blue,
+            width: 300,
+            height: 300,
+          ),
+          //index1
+          Container(
+            color: Colors.red,
+            width: 200,
+            height: 200,
+          ),
+          //index2
+          Container(
+            color: Colors.green,
+            width: 100,
+            height: 100,
+          ),
+        ])));
   }
 }
 
