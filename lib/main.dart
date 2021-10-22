@@ -273,25 +273,84 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(),
         drawer: Drawer(),
         body: Container(
-            child: IndexedStack(
-              index: 1,
-              children: [
+            child: Wrap(direction: Axis.vertical, children: [
           //index0
           Container(
+            margin: EdgeInsets.all(10),
             color: Colors.blue,
-            width: 300,
-            height: 300,
+            width: 90,
+            height: 100,
           ),
           //index1
           Container(
+            margin: EdgeInsets.all(10),
             color: Colors.red,
-            width: 200,
-            height: 200,
+            width: 90,
+            height: 100,
           ),
           //index2
           Container(
+            margin: EdgeInsets.all(10),
             color: Colors.green,
-            width: 100,
+            width: 90,
+            height: 100,
+          ),
+          Container(
+            margin: EdgeInsets.all(10),
+            color: Colors.brown,
+            width: 90,
+            height: 100,
+          ),
+          Container(
+            margin: EdgeInsets.all(10),
+            color: Colors.blue,
+            width: 90,
+            height: 100,
+          ),
+          //index1
+          Container(
+            margin: EdgeInsets.all(10),
+            color: Colors.red,
+            width: 90,
+            height: 100,
+          ),
+          //index2
+          Container(
+            margin: EdgeInsets.all(10),
+            color: Colors.green,
+            width: 90,
+            height: 100,
+          ),
+          Container(
+            margin: EdgeInsets.all(10),
+            color: Colors.brown,
+            width: 90,
+            height: 100,
+          ),
+          Container(
+            margin: EdgeInsets.all(10),
+            color: Colors.blue,
+            width: 90,
+            height: 100,
+          ),
+          //index1
+          Container(
+            margin: EdgeInsets.all(10),
+            color: Colors.red,
+            width: 90,
+            height: 100,
+          ),
+          //index2
+          Container(
+            margin: EdgeInsets.all(10),
+            color: Colors.green,
+            width: 90,
+            height: 100,
+          ),
+          Container(
+            margin: EdgeInsets.all(10),
+            color: Colors.brown,
+            width: 90,
             height: 100,
           ),
         ])));
