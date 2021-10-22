@@ -272,6 +272,12 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            print("float actionbutton pressed");
+          },
+          child: Icon(Icons.add),
+        ),
         body: Center(
           //==========================ElevatedButton===================
           /* child: ElevatedButton(
@@ -331,9 +337,14 @@ class HomePage extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 20),
               color: Colors.blue,
               alignment: Alignment.center,
-              child: Text("Custom Buuton",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight:FontWeight.bold),),
+              child: Text(
+                "Custom Buuton",
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
-           
             onTap: () {
               print("Custom Button pressed");
             },
