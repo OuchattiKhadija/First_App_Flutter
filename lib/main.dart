@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
 
 import 'package:flutter/material.dart';
 
@@ -272,90 +272,89 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Container(
-            child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(children: [
-            Container(
-              margin: EdgeInsets.all(10),
+        body: Center(
+          //==========================ElevatedButton===================
+          /* child: ElevatedButton(
+              onPressed: () {
+                print("pressed");
+              },
+              child: Text("Button"),
+              style:ElevatedButton.styleFrom(
+                primary: Colors.cyan,
+                padding: EdgeInsets.all(10),
+                minimumSize: Size(200,50),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                textStyle: TextStyle(
+                  fontSize: 20, 
+                  fontWeight: FontWeight.w500,
+                ),
+                //elevation: 50,
+                //shadowColor: Colors.yellow
+                //fixedSize: Size(120, 20)
+              )),*/
+          //=====================================ElevatedButton.icons=========================
+          /* child: ElevatedButton.icon(
+              onPressed: () {},
+              icon: Icon(Icons.access_alarms),
+              label: Text("Khadija")),*/
+
+          //=====================================MaterialButton=========================
+          /* child: MaterialButton(
+            onPressed: () {},
+            child: Text("Button"),
+            color: Colors.blueGrey,
+            textColor: Colors.white,
+            elevation: 5,
+            padding: EdgeInsets.all(10),
+            splashColor: Colors.blue,
+            height: 40,
+            minWidth: 220,
+          ),*/
+
+          //=====================================TextButton=========================
+          // child: TextButton(onPressed: (){}, child: Text("text Button")),
+
+          //=====================================IconButton=========================
+          /* child: IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.perm_camera_mic),
+            iconSize: 60,
+            color: Colors.cyanAccent,
+          ),*/
+
+          //=====================================Custom Button=========================
+          child: InkWell(
+            child: Container(
+              width: double.infinity,
+              height: 60,
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.symmetric(horizontal: 20),
               color: Colors.blue,
-              width: 90,
-              height: 100,
+              alignment: Alignment.center,
+              child: Text("Custom Buuton",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight:FontWeight.bold),),
             ),
-            //index1
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.red,
-              width: 90,
-              height: 100,
-            ),
-            //index2
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.green,
-              width: 90,
-              height: 100,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.brown,
-              width: 90,
-              height: 100,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.blue,
-              width: 90,
-              height: 100,
-            ),
-            //index1
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.red,
-              width: 90,
-              height: 100,
-            ),
-            //index2
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.green,
-              width: 90,
-              height: 100,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.brown,
-              width: 90,
-              height: 100,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.blue,
-              width: 90,
-              height: 100,
-            ),
-            //index1
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.red,
-              width: 90,
-              height: 100,
-            ),
-            //index2
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.green,
-              width: 90,
-              height: 100,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              color: Colors.brown,
-              width: 90,
-              height: 100,
-            ),
-          ]),
-        )));
+           
+            onTap: () {
+              print("Custom Button pressed");
+            },
+          ),
+        )
+
+        //Center Widget
+        /* Center(
+        child: Text("text to centre in screen"),
+      )*/
+        /*SizedBox Widget
+      SizedBox(
+        width: 100,
+        height: 100,
+        child: Container(
+          color: Colors.black45,
+          child: Text("Khadija Ouchatti"),
+        ),
+        
+      ),*/
+        );
   }
 }
 
