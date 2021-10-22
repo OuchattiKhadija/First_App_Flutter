@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
 
 import 'package:flutter/material.dart';
-
+import 'package:flutter_application_2/test.dart';
 void main() {
   runApp(MyApp());
 }
@@ -10,10 +10,53 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: Test(),
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class ExampleOneCorig extends StatelessWidget {
   @override
@@ -424,21 +467,6 @@ class Login extends StatelessWidget {
   }
 }
 
-//image providers
-//1- NetworkImage  :  load from network internet
-//2- AssetImage   :  load from MyApp asset
-
-//pubSpec.yaml
-//1- add packages / plugins ..
-//2- folder for images and files
-//3- fonts
-
-//widget types
-//1 - speific like Text Image.asset Image.network
-//2 - child : Card Container SizdBox and Etc  //accept child
-//3 - Children : Collumn Row Stack ListView GridView //accept more than one child
-//4 - Scaffold MaterialApp
-
 class ColumnAndRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -472,3 +500,17 @@ class ColumnAndRow extends StatelessWidget {
         ));
   }
 }
+//image providers
+//1- NetworkImage  :  load from network internet
+//2- AssetImage   :  load from MyApp asset
+
+//pubSpec.yaml
+//1- add packages / plugins ..
+//2- folder for images and files
+//3- fonts
+
+//widget types
+//1 - speific like Text Image.asset Image.network
+//2 - child : Card Container SizdBox and Etc  //accept child
+//3 - Children : Collumn Row Stack ListView GridView //accept more than one child
+//4 - Scaffold MaterialApp
