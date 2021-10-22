@@ -272,6 +272,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
+        //==========================FloatingActionButton===================
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             print("float actionbutton pressed");
@@ -279,6 +280,37 @@ class HomePage extends StatelessWidget {
           child: Icon(Icons.add),
         ),
         body: Center(
+          // ==========================GestureDetector===================
+          child: GestureDetector(
+            child: Container(
+                padding: EdgeInsets.all(20),
+                color: Colors.blue,
+                child: Text("GestureDetector")),
+            onDoubleTap: () {
+              print("GestureDetector double pressed");
+            },
+            onTap: () {
+              print("GestureDetector pressed");
+            },
+            onTapUp: (tap) {
+              print("onTapUp ");
+            },
+            onTapDown: (tap) {
+              print("onTapDown ");
+            },
+            onTapCancel: () {
+              print("onTapCancel ");
+            },
+            onLongPressEnd: (press) {
+              print("onLongPressEnd ");
+            },
+            onLongPressStart: (press) {
+              print("onLongPressStart ");
+            },
+            onLongPressCancel: () {
+              print("onLongPressCancel ");
+            },
+          ),
           //==========================ElevatedButton===================
           /* child: ElevatedButton(
               onPressed: () {
@@ -329,7 +361,7 @@ class HomePage extends StatelessWidget {
           ),*/
 
           //=====================================Custom Button=========================
-          child: InkWell(
+          /* child: InkWell(
             child: Container(
               width: double.infinity,
               height: 60,
@@ -348,7 +380,7 @@ class HomePage extends StatelessWidget {
             onTap: () {
               print("Custom Button pressed");
             },
-          ),
+          ), */
         )
 
         //Center Widget
