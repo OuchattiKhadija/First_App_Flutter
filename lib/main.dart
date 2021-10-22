@@ -10,7 +10,130 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ExampleOne(),
+      home: ExampleOneCorig(),
+    );
+  }
+}
+
+class ExampleOneCorig extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: Drawer(),
+      body: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                  alignment: Alignment.center,
+                  width: double.infinity,
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: Colors.blue,
+                      border: Border.all(color: Colors.black, width: 2)),
+                  child: Text("Strawbery Pavlova Recipe",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white))),
+              Container(
+                margin: EdgeInsets.only(top: 25, bottom: 20),
+                alignment: Alignment.center,
+                width: double.infinity,
+                child: Text(
+                    "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise un texte en faux latin, le Lorem ipsum ou Lipsum.",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 20, height: 1.5)),
+              ),
+              Container(
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 2)),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.grade,
+                              color: Colors.yellow,
+                            ),
+                            Icon(
+                              Icons.grade,
+                              color: Colors.yellow,
+                            ),
+                            Icon(
+                              Icons.grade,
+                              color: Colors.yellow,
+                            ),
+                            Icon(Icons.grade),
+                            Icon(Icons.grade),
+                          ],
+                        ),
+                        Text(
+                          "17 reviews",
+                          style: TextStyle(fontSize: 20),
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Column(
+                            children: [
+                              Icon(
+                                Icons.restaurant,
+                                color: Colors.green,
+                                size: 40,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(10),
+                                child:Text("Feed")), 
+                                Text("2 - 4"),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Icon(
+                                Icons.category,
+                                color: Colors.green,
+                                size: 40,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(10),
+                                child:Text("Feed")), 
+                                Text("2 - 4"),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Icon(
+                                Icons.emoji_food_beverage,
+                                color: Colors.green,
+                                size: 40,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(10),
+                                child:Text("Feed")), 
+                                Text("2 - 4"),
+                            ],
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          )),
     );
   }
 }
