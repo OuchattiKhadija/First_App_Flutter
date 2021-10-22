@@ -273,87 +273,89 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(),
         drawer: Drawer(),
         body: Container(
-            child: Wrap(direction: Axis.vertical, children: [
-          //index0
-          Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.blue,
-            width: 90,
-            height: 100,
-          ),
-          //index1
-          Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.red,
-            width: 90,
-            height: 100,
-          ),
-          //index2
-          Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.green,
-            width: 90,
-            height: 100,
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.brown,
-            width: 90,
-            height: 100,
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.blue,
-            width: 90,
-            height: 100,
-          ),
-          //index1
-          Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.red,
-            width: 90,
-            height: 100,
-          ),
-          //index2
-          Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.green,
-            width: 90,
-            height: 100,
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.brown,
-            width: 90,
-            height: 100,
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.blue,
-            width: 90,
-            height: 100,
-          ),
-          //index1
-          Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.red,
-            width: 90,
-            height: 100,
-          ),
-          //index2
-          Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.green,
-            width: 90,
-            height: 100,
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            color: Colors.brown,
-            width: 90,
-            height: 100,
-          ),
-        ])));
+            child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(children: [
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.blue,
+              width: 90,
+              height: 100,
+            ),
+            //index1
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.red,
+              width: 90,
+              height: 100,
+            ),
+            //index2
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.green,
+              width: 90,
+              height: 100,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.brown,
+              width: 90,
+              height: 100,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.blue,
+              width: 90,
+              height: 100,
+            ),
+            //index1
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.red,
+              width: 90,
+              height: 100,
+            ),
+            //index2
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.green,
+              width: 90,
+              height: 100,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.brown,
+              width: 90,
+              height: 100,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.blue,
+              width: 90,
+              height: 100,
+            ),
+            //index1
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.red,
+              width: 90,
+              height: 100,
+            ),
+            //index2
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.green,
+              width: 90,
+              height: 100,
+            ),
+            Container(
+              margin: EdgeInsets.all(10),
+              color: Colors.brown,
+              width: 90,
+              height: 100,
+            ),
+          ]),
+        )));
   }
 }
 
