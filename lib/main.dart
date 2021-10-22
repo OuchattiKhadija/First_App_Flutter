@@ -10,8 +10,134 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ColumnAndRow(),
+      home: ExampleOne(),
     );
+  }
+}
+
+class ExampleOne extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(),
+        drawer: Drawer(),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(10),
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                decoration: BoxDecoration(
+                    color: Colors.blue,
+                    border: Border.all(color: Colors.black)),
+                child: Text("Strawbery Pavlova Recipe",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white))),
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.all(20),
+              child: Text(
+                "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise un texte en faux latin, le Lorem ipsum ou Lipsum.",
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20),
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(9),
+              decoration:
+                  BoxDecoration(border: Border.all(color: Colors.black)),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                          flex: 1,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.grade,
+                                color: Colors.yellow,
+                              ),
+                              Icon(
+                                Icons.grade,
+                                color: Colors.yellow,
+                              ),
+                              Icon(
+                                Icons.grade,
+                                color: Colors.yellow,
+                              ),
+                              Icon(Icons.grade),
+                              Icon(Icons.grade),
+                            ],
+                          )),
+                      Expanded(
+                          flex: 1,
+                          child: Container(
+                            width: double.infinity,
+                            child: Text(
+                              "17 reviews",
+                              style: TextStyle(fontSize: 20),
+                              textAlign: TextAlign.center,
+                            ),
+                          ))
+                    ],
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 20),
+                    child: Row(
+                      children: [
+                        Expanded(
+                            flex: 1,
+                            child: Column(
+                              children: [
+                                Icon(
+                                  Icons.restaurant,
+                                  color: Colors.green,
+                                  size: 30,
+                                ),
+                                Text("Feed"),
+                                Text("2 - 4"),
+                              ],
+                            )),
+                        Expanded(
+                            flex: 1,
+                            child: Column(
+                              children: [
+                                Icon(Icons.category,
+                                    color: Colors.green, size: 30),
+                                Text("Feed"),
+                                Text("2 - 4"),
+                              ],
+                            )),
+                        Expanded(
+                            flex: 1,
+                            child: Column(
+                              children: [
+                                Icon(Icons.emoji_food_beverage,
+                                    color: Colors.green, size: 30),
+                                Text("Feed"),
+                                Text("2 - 4"),
+                              ],
+                            )),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ));
   }
 }
 
@@ -108,19 +234,20 @@ class ColumnAndRow extends StatelessWidget {
               thickness: 10,
             ),
             Text("column 2", style: TextStyle(fontSize: 20)),
-           Container(
-             height:200,
-             child:  Row(
-              children: [
-                Text("Row 1", style: TextStyle(fontSize: 20)),
-                VerticalDivider(
-                  color: Colors.black,
-                  width: 70,
-                  thickness: 10.90,
-                ),
-                Text("Row 2", style: TextStyle(fontSize: 20)),
-              ],
-            ),)
+            Container(
+              height: 200,
+              child: Row(
+                children: [
+                  Text("Row 1", style: TextStyle(fontSize: 20)),
+                  VerticalDivider(
+                    color: Colors.black,
+                    width: 70,
+                    thickness: 10.90,
+                  ),
+                  Text("Row 2", style: TextStyle(fontSize: 20)),
+                ],
+              ),
+            )
           ],
         ));
   }
