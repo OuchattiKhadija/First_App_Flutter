@@ -17,9 +17,14 @@ class _TestState extends State<Test> {
   bool fr = false;
   bool cn = false;
 
-  String val= "Contry";
+  //String val= "Contry";
 
-  String country = "usa";
+  var country;
+
+  var countryList;
+
+  bool notify = false;
+  bool notifyListTail = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,134 +32,261 @@ class _TestState extends State<Test> {
         drawer: Drawer(),
         body: Center(
             child: Container(
-          //   color: Colors.blue,
-          margin: EdgeInsets.symmetric(horizontal: 20.0),
-          padding: EdgeInsets.all(5.0),
-          child: Column(
-            children: [
-              Text("Choose Country",
-                  style: TextStyle(
-                    fontSize: 20,
-                  )),
-              //==========================CheckboxList ===================
-              CheckboxListTile(
-                  controlAffinity: ListTileControlAffinity.leading,
-                  secondary: Icon(Icons.flag),
-                  isThreeLine: true,
-                  selected: ma,
-                  value: ma,
-                  contentPadding: EdgeInsets.only(top: 10),
-                  title: Text("Country Ma"),
-                  subtitle: Text("Morocco"),
-                  onChanged: (val) {
-                    setState(() {
-                      ma = val!;
-                    });
-                  }),
-              CheckboxListTile(
-                  controlAffinity: ListTileControlAffinity.platform,
-                  secondary: Icon(Icons.flag),
-                  isThreeLine: true,
-                  selected: cn,
-                  value: cn,
-                  contentPadding: EdgeInsets.only(top: 20),
-                  title: Text("Country CN"),
-                  subtitle: Text("China"),
-                  onChanged: (val) {
-                    setState(() {
-                      cn = val!;
-                    });
-                  }),
-              CheckboxListTile(
-                  controlAffinity: ListTileControlAffinity.trailing,
-                  secondary: Icon(Icons.flag),
-                  isThreeLine: true,
-                  selected: usa,
-                  value: usa,
-                  contentPadding: EdgeInsets.only(top: 20),
-                  title: Text("Country USA"),
-                  subtitle: Text("America"),
-                  onChanged: (val) {
-                    setState(() {
-                      usa = val!;
-                    });
-                  }),
-              CheckboxListTile(
-                  secondary: Icon(Icons.flag),
-                  isThreeLine: true,
-                  selected: fr,
-                  value: fr,
-                  contentPadding: EdgeInsets.only(top: 20),
-                  title: Text("Country FR"),
-                  subtitle: Text("France"),
-                  onChanged: (val) {
-                    setState(() {
-                      fr = val!;
-                    });
-                  }),
-              //==========================Radio ===================
-              Row(
-                children: [
-                  Text("MA"),
-                  Radio(
-                    value: 1,
-                    groupValue: val,
-                    onChanged: (value) {
-                      setState(() {
-                        val = value.toString();
-                      });
-                    },
-                    toggleable: true,
+                //   color: Colors.blue,
+                margin: EdgeInsets.symmetric(horizontal: 20.0),
+                padding: EdgeInsets.all(5.0),
+                child: SingleChildScrollView(
+                  //index0
+                  scrollDirection: Axis.vertical,
+                  child: Column(
+                    children: [
+                      Text("Choose Country",
+                          style: TextStyle(
+                            fontSize: 20,
+                          )),
+                      //==========================Checkbox===================
+                      Text("Checkbox",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      Row(
+                        children: [
+                          Text("MA"),
+                          Checkbox(
+                              value: ma,
+                              onChanged: (val) {
+                                setState(() {
+                                  ma = val!;
+                                  print("$ma");
+                                });
+                              }),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text("USA"),
+                          Checkbox(
+                              value: usa,
+                              onChanged: (val) {
+                                setState(() {
+                                  usa = val!;
+                                  print("$usa");
+                                });
+                              }),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text("FR"),
+                          Checkbox(
+                              value: fr,
+                              onChanged: (val) {
+                                setState(() {
+                                  fr = val!;
+                                  print("$fr");
+                                });
+                              }),
+                        ],
+                      ),
+                      //==========================CheckboxListTile ===================
+                      Text("CheckboxListTile",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      CheckboxListTile(
+                          controlAffinity: ListTileControlAffinity.leading,
+                          secondary: Icon(Icons.flag),
+                          isThreeLine: true,
+                          selected: ma,
+                          value: ma,
+                          contentPadding: EdgeInsets.only(top: 10),
+                          title: Text("Country Ma"),
+                          subtitle: Text("Morocco"),
+                          onChanged: (val) {
+                            setState(() {
+                              ma = val!;
+                            });
+                          }),
+                      CheckboxListTile(
+                          controlAffinity: ListTileControlAffinity.platform,
+                          secondary: Icon(Icons.flag),
+                          isThreeLine: true,
+                          selected: cn,
+                          value: cn,
+                          contentPadding: EdgeInsets.only(top: 20),
+                          title: Text("Country CN"),
+                          subtitle: Text("China"),
+                          onChanged: (val) {
+                            setState(() {
+                              cn = val!;
+                            });
+                          }),
+                      CheckboxListTile(
+                          controlAffinity: ListTileControlAffinity.trailing,
+                          secondary: Icon(Icons.flag),
+                          isThreeLine: true,
+                          selected: usa,
+                          value: usa,
+                          contentPadding: EdgeInsets.only(top: 20),
+                          title: Text("Country USA"),
+                          subtitle: Text("America"),
+                          onChanged: (val) {
+                            setState(() {
+                              usa = val!;
+                            });
+                          }),
+                      CheckboxListTile(
+                          secondary: Icon(Icons.flag),
+                          isThreeLine: true,
+                          selected: fr,
+                          value: fr,
+                          contentPadding: EdgeInsets.only(top: 20),
+                          title: Text("Country FR"),
+                          subtitle: Text("France"),
+                          onChanged: (val) {
+                            setState(() {
+                              fr = val!;
+                            });
+                          }),
+                      //==========================Radio ===================
+                      Text("Radio",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      Row(
+                        children: [
+                          Text("MA"),
+                          Radio(
+                              value: "ma",
+                              groupValue: country,
+                              onChanged: (val) {
+                                setState(() {
+                                  country = val;
+                                });
+
+                                print(val);
+                              })
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text("USA"),
+                          Radio(
+                              value: "usa",
+                              groupValue: country,
+                              onChanged: (val) {
+                                setState(() {
+                                  country = val;
+                                });
+
+                                print(val);
+                              })
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text("CN"),
+                          Radio(
+                              value: "cn",
+                              activeColor: Colors.red,
+                              groupValue: country,
+                              onChanged: (val) {
+                                setState(() {
+                                  country = val;
+                                });
+
+                                print(val);
+                              })
+                        ],
+                      ),
+                      //==========================RadioListTile ===================
+                      Text("RadioListTile",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      RadioListTile(
+                          value: "ma",
+                          title: Text("Country MA"),
+                          subtitle: Text("Morocco"),
+                          groupValue: countryList,
+                          onChanged: (val) {
+                            setState(() {
+                              countryList = val;
+                            });
+                          }),
+                      RadioListTile(
+                          value: "usa",
+                          title: Text("Country USA"),
+                          subtitle: Text("America"),
+                          groupValue: countryList,
+                          onChanged: (val) {
+                            setState(() {
+                              countryList = val;
+                            });
+                          }),
+                      RadioListTile(
+                          value: "fr",
+                          title: Text("Country Fr"),
+                          subtitle: Text("France"),
+                          groupValue: countryList,
+                          onChanged: (val) {
+                            setState(() {
+                              countryList = val;
+                            });
+                          }),
+
+                      //==========================Switch ===================
+                      Text("Switch",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      Row(
+                        children: [
+                          Text("Enable Notifications"),
+                          Switch(
+                              value: notify,
+                              onChanged: (val) {
+                                setState(() {
+                                  notify = val;
+                                  print(notify);
+                                });
+                              }),
+                        ],
+                      ),
+                      //==========================SwitchListTile ===================
+                      Text("SwitchListTile",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      SwitchListTile(
+                          value: notifyListTail,
+                          isThreeLine: true,
+                          title: Text("Enable GPS"),
+                          subtitle: Text(" Auto get Locations"),
+                          secondary: Icon(Icons.location_on),
+                          onChanged: (val) {
+                            setState(() {
+                              notifyListTail = val;
+                            });
+                          }),
+                    ],
                   ),
-                ],
-              )
-              //==========================Checkbox===================
-              /* Row(
-                children: [
-                  Text("MA"),
-                  Checkbox(
-                      value: ma,
-                      onChanged: (val) {
-                        setState(() {
-                          ma = val!;
-                        print("$ma");
-                        });
-                        
-                      }),
-                ],
-              ),Row(
-                children: [
-                  Text("USA"),
-                  Checkbox(
-                      value: usa,
-                      onChanged: (val) {
-                        setState(() {
-                          usa = val!;
-                        print("$usa");
-                        });
-                        
-                      }),
-                ],
-              ),Row(
-                children: [
-                  Text("FR"),
-                  Checkbox(
-                      value: fr,
-                      onChanged: (val) {
-                        setState(() {
-                          fr = val!;
-                        print("$fr");
-                        });
-                        
-                      }),
-                ],
-              ) */
-            ],
-          ),
-        )
-            //==========================DropdownButton===================
-            //if we want to hide underline : put dropDown widget under deropDownButtonHideUnderline
-            /*  child: DropdownButton(
+                )
+                //==========================DropdownButton===================
+                //if we want to hide underline : put dropDown widget under deropDownButtonHideUnderline
+                /*  child: DropdownButton(
             // dropdownColor: Colors.blueGrey.shade400,
           //  icon: Icon(Icons.countertops),
            // underline: Divider(thickness: 0,),
@@ -176,6 +308,6 @@ class _TestState extends State<Test> {
             },
             value: selectedCountry,
           ), */
-            ));
+                )));
   }
 }
