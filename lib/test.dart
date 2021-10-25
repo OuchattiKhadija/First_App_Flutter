@@ -41,6 +41,34 @@ class _TestState extends State<Test> {
                   scrollDirection: Axis.vertical,
                   child: Column(
                     children: [
+                      //==========================DropdownButton===================
+                      Text("DropdownButton",
+                          style: TextStyle(
+                            fontSize: 20,
+                          )),
+                      //if we want to hide underline : put dropDown widget under deropDownButtonHideUnderline
+                      DropdownButton(
+                        // dropdownColor: Colors.blueGrey.shade400,
+                        //  icon: Icon(Icons.countertops),
+                        // underline: Divider(thickness: 0,),
+                        isExpanded: true,
+                        hint: Text("Select Country"),
+                        items: ["MA", "FR", "UK", "UAE", "EG", "SA"]
+                            .map((e) => DropdownMenuItem(
+                                  //value in ui
+                                  child: Text("Country $e"),
+                                  //real value in backe
+                                  value: e,
+                                ))
+                            .toList(),
+                        onChanged: (val) {
+                          setState(() {
+                            print("$val");
+                            selectedCountry = val.toString();
+                          });
+                        },
+                        value: selectedCountry,
+                      ),
                       Text("Choose Country",
                           style: TextStyle(
                             fontSize: 20,
@@ -337,7 +365,7 @@ class _TestState extends State<Test> {
                             "https://t3.ftcdn.net/jpg/03/30/94/14/360_F_330941409_NskU7zETDIHIT17Ipg7lAbKMqBBm41CI.jpg"),
                         radius: 40,
                       ),
-                      //==========================CircleAvatar ===================
+                      //==========================SnackBar ===================
                       Text("SnackBar",
                           style: TextStyle(
                             fontSize: 16,
@@ -381,6 +409,7 @@ class _TestState extends State<Test> {
                       ElevatedButton(
                         onPressed: () {
                           showDialog(
+                              //concelable false
                               barrierDismissible: false,
                               context: context,
                               builder: (context) {
@@ -407,34 +436,10 @@ class _TestState extends State<Test> {
                               });
                         },
                         child: Text("Show Alert"),
-                      )
+                      ),
+                      //==========================ListView===================
                     ],
                   ),
-                )
-                //==========================DropdownButton===================
-                //if we want to hide underline : put dropDown widget under deropDownButtonHideUnderline
-                /*  child: DropdownButton(
-            // dropdownColor: Colors.blueGrey.shade400,
-          //  icon: Icon(Icons.countertops),
-           // underline: Divider(thickness: 0,),
-            isExpanded: true,
-            hint: Text("Select Country"),
-            items: ["MA", "FR", "UK", "UAE", "EG", "SA"]
-                .map((e) => DropdownMenuItem(
-                      //value in ui
-                      child: Text("Country $e"),
-                      //real value in backe
-                      value: e,
-                    ))
-                .toList(),
-            onChanged: (val) {
-              setState(() {
-                print("$val");
-                selectedCountry = val.toString();
-              });
-            },
-            value: selectedCountry,
-          ), */
-                )));
+                ))));
   }
 }
