@@ -64,7 +64,10 @@ class _OtherState extends State<Other> {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: ListView.builder(
+        body: ListView.separated(
+          separatorBuilder: (context,index){
+            return Divider(color: Colors.black, height : 2,thickness: 2, );
+          },
           padding: EdgeInsets.all(10),
         // itemCount: li.length,
          itemCount: mobile.length,
