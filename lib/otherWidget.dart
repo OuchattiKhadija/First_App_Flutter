@@ -71,22 +71,31 @@ class _OtherState extends State<Other> {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: GridView.builder(
-          //scrollDirection: Axis.horizontal,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, mainAxisSpacing: 35.0, mainAxisExtent: 35.0,childAspectRatio:2),
-            itemCount: mobile.length,
-            itemBuilder: (context, i) {
-              return ListTile(
-                leading: Icon(Icons.phone_android),
-                isThreeLine: true,
-                title: Text("${mobile[i]['name']}"),
-                subtitle: Text(mobile[i]['cpu']),
-                trailing: Text("screen : ${mobile[i]['screen']}"),
-              );
-            }));
+        body: GridView.count(crossAxisCount:4,
+          
+            children: [
+              Container(child: Text("Container One"),color: Colors.blueGrey.shade200,margin:  EdgeInsets.all(5),alignment: Alignment.center ,),
+              Container(child: Text("Container Two"),color: Colors.yellow,margin:  EdgeInsets.all(5),alignment: Alignment.center ,),
+              Container(child: Text("Container 3"),color: Colors.purpleAccent,margin:  EdgeInsets.all(5),alignment: Alignment.center ,),
+              Container(child: Text("Container 4"),color: Colors.cyan,margin:  EdgeInsets.all(5),alignment: Alignment.center ,),
+              Container(child: Text("Container 5"),color: Colors.redAccent,margin:  EdgeInsets.all(5),alignment: Alignment.center ,),
+              Container(child: Text("Container 6"),color: Colors.brown.shade100,margin:  EdgeInsets.all(5),alignment: Alignment.center ,),
+              Container(child: Text("Container 7"),color: Colors.transparent,margin:  EdgeInsets.all(5),alignment: Alignment.center ,),
+               Container(child: Text("Container 8"),color: Colors.blueGrey.shade200,margin:  EdgeInsets.all(5),alignment: Alignment.center ,),
+              Container(child: Text("Container 9"),color: Colors.yellow,margin:  EdgeInsets.all(5),alignment: Alignment.center ,),
+              Container(child: Text("Container 10"),color: Colors.purpleAccent,margin:  EdgeInsets.all(5),alignment: Alignment.center ,),
+              Container(child: Text("Container 11"),color: Colors.cyan,margin:  EdgeInsets.all(5),alignment: Alignment.center ,),
+              Container(child: Text("Container 12"),color: Colors.redAccent,margin:  EdgeInsets.all(5),alignment: Alignment.center ,),
+              Container(child: Text("Container 13"),color: Colors.brown.shade100,margin:  EdgeInsets.all(5),alignment: Alignment.center ,),
+
+            ],
+            ));
   }
 }
 
 
 //ListViewBuilder = ListView + loop
+
+//GridViewBuilder = GridView + loop
+
+//ListGenerate => loop like for /while
