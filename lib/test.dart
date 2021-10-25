@@ -25,6 +25,7 @@ class _TestState extends State<Test> {
 
   bool notify = false;
   bool notifyListTail = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -281,6 +282,132 @@ class _TestState extends State<Test> {
                               notifyListTail = val;
                             });
                           }),
+                      //==========================ListTaile ===================
+                      Text("ListTile",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      ListTile(
+                        title: Text("ListTaile"),
+                        subtitle: Text("ListTaile SubTitle"),
+                        leading: Icon(Icons.mobile_friendly),
+                        trailing: Text("Trailling"),
+                        isThreeLine: true,
+                        onTap: () {
+                          print("OnTap");
+                        },
+                        //tileColor: Colors.grey.shade200,
+                        // contentPadding: EdgeInsets.only(top: 20,bottom: 10),
+                      ),
+
+                      //==========================CircleAvatar ===================
+                      Text("CircleAvatar",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.bold,
+                          )),
+
+                      CircleAvatar(
+                        child: Text("CA",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold)),
+                        backgroundColor: Colors.cyan,
+                        radius: 40,
+                      ),
+
+                      CircleAvatar(
+                        child: Icon(
+                          Icons.account_circle_outlined,
+                          color: Colors.white,
+                        ),
+                        backgroundColor: Colors.cyan,
+                        radius: 40,
+                      ),
+
+                      CircleAvatar(
+                        child: Text("BG",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold)),
+                        backgroundImage: NetworkImage(
+                            "https://t3.ftcdn.net/jpg/03/30/94/14/360_F_330941409_NskU7zETDIHIT17Ipg7lAbKMqBBm41CI.jpg"),
+                        radius: 40,
+                      ),
+                      //==========================CircleAvatar ===================
+                      Text("SnackBar",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.bold,
+                          )),
+
+                      ElevatedButton(
+                        onPressed: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              backgroundColor: Colors.grey,
+                              content: Text("SnackBar",
+                                  style: TextStyle(color: Colors.black)),
+                              duration: Duration(milliseconds: 1000),
+                              padding: EdgeInsets.all(10),
+                              //if we want to use marging
+                              behavior: SnackBarBehavior.floating,
+                              onVisible: () {
+                                print("Show snack bar");
+                              },
+                              action: SnackBarAction(
+                                  label: "Close",
+                                  textColor: Colors.white,
+                                  onPressed: () {
+                                    print("SnackBarAction pressed to clode");
+                                  }),
+                            ),
+                          );
+                        },
+                        child: Text("Show snack bar"),
+                      ),
+                      //========================== AlertDialog ===================
+                      Text("AlertDialog",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.bold,
+                          )),
+
+                      ElevatedButton(
+                        onPressed: () {
+                          showDialog(
+                              barrierDismissible: false,
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                    actions: [
+                                      TextButton(
+                                          onPressed: () {
+                                            print("OK");
+                                          },
+                                          child: Text("Ok")),
+                                      TextButton(
+                                          onPressed: () {
+                                            //to close alert Dialog
+                                            Navigator.of(context).pop();
+                                            print("Cancel");
+                                          },
+                                          child: Text("Cancel")),
+                                    ],
+                                    titlePadding:
+                                        EdgeInsets.only(top: 30, left: 20),
+                                    contentPadding: EdgeInsets.all(20),
+                                    title: Text("AlertDialog"),
+                                    content: Text("Content content content"));
+                              });
+                        },
+                        child: Text("Show Alert"),
+                      )
                     ],
                   ),
                 )
