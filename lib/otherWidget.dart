@@ -10,144 +10,76 @@ class Other extends StatefulWidget {
 }
 
 class _OtherState extends State<Other> {
+
+    List<String> li = ["209", "3005", "7982","20", "30e05", "2e","2e0", "3e005", "2e","2e0", "300e5", "2re","2e0", "30e05", "2er","2e0", "3e005", "29898","20", "3005", "2",];
+
+    List mobile = [
+      {
+        "name" : "s20",
+        "screen" : "6.2", 
+        "cpu" : "8core"
+      },
+      {
+        "name" : "s22",
+        "screen" : "6.2", 
+        "cpu" : "8core"
+      },{
+        "name" : "s22",
+        "screen" : "6.2", 
+        "cpu" : "8core"
+      },{
+        "name" : "s23",
+        "screen" : "6.2", 
+        "cpu" : "8core"
+      },{
+        "name" : "s24",
+        "screen" : "6.2", 
+        "cpu" : "8core"
+      },
+       {
+        "name" : "s20",
+        "screen" : "6.2", 
+        "cpu" : "8core"
+      },
+      {
+        "name" : "s22",
+        "screen" : "6.2", 
+        "cpu" : "8core"
+      },{
+        "name" : "s22",
+        "screen" : "6.2", 
+        "cpu" : "8core"
+      },{
+        "name" : "s23",
+        "screen" : "6.2", 
+        "cpu" : "8core"
+      },{
+        "name" : "s24",
+        "screen" : "6.2", 
+        "cpu" : "8core"
+      },
+    ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: ListView(
-          //    scrollDirection: Axis.horizontal,
+        body: ListView.builder(
           padding: EdgeInsets.all(10),
-          //reverse order
-          //reverse: true,
-          //type of scrolling
-          physics: BouncingScrollPhysics(),
-          children: [
-            Container(
-              color: Colors.blueGrey,
-              child: Text("TextContainer 1 "),
-              height: 90,
-            ),
-            Container(
-              color: Colors.red,
-              child: Text("TextContainer 2 "),
-              height: 190,
-            ),
-            Container(
-              color: Colors.green,
-              child: Text("TextContainer 3 "),
-              height: 190,
-            ),
-            Container(
-
-              height: 200,
-              child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  padding: EdgeInsets.all(10),
-                  children: [
-                    Container(
-                      width : 100,
-                      color: Colors.lightGreenAccent,
-                      child: Text("listview2 con"),
-                      height: 100,
-                    ),
-                    Container(
-                      width : 100,
-                      color: Colors.white,
-                      child: Text("listview2 con"),
-                      height: 100,
-                    ),
-                    Container(
-                      width : 100,
-                      color: Colors.lightGreenAccent,
-                      child: Text("listview2 con"),
-                      height: 100,
-                    ),
-                    Container(
-                      width : 100,
-                      color: Colors.lightBlueAccent,
-                      child: Text("listview2 con"),
-                      height: 100,
-                    ),
-                    Container(
-                      width : 100,
-                      color: Colors.white,
-                      child: Text("listview2 con"),
-                      height: 100,
-                    ),
-                    Container(
-                      width : 100,
-                      color: Colors.lightBlueAccent,
-                      child: Text("listview2 con"),
-                      height: 100,
-                    ),
-                  ]),
-            ),
-            Container(
-              color: Colors.orangeAccent,
-              child: Text("TextContainer 4 "),
-              height: 190,
-            ),
-            Container(
-              color: Colors.teal,
-              child: Text("TextContainer 5 "),
-              height: 190,
-            ),
-            ListView(
-              // shrinkWrap == hight wrap content 
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-                 // scrollDirection: Axis.horizontal,
-                  padding: EdgeInsets.all(10),
-                  children: [
-                    Container(
-                      width : 100,
-                      color: Colors.lightGreenAccent,
-                      child: Text("listview2 con"),
-                      height: 100,
-                    ),
-                    Container(
-                      width : 100,
-                      color: Colors.white,
-                      child: Text("listview2 con"),
-                      height: 100,
-                    ),
-                    Container(
-                      width : 100,
-                      color: Colors.lightGreenAccent,
-                      child: Text("listview2 con"),
-                      height: 100,
-                    ),
-                    Container(
-                      width : 100,
-                      color: Colors.lightBlueAccent,
-                      child: Text("listview2 con"),
-                      height: 100,
-                    ),
-                    Container(
-                      width : 100,
-                      color: Colors.white,
-                      child: Text("listview2 con"),
-                      height: 100,
-                    ),
-                    Container(
-                      width : 100,
-                      color: Colors.lightBlueAccent,
-                      child: Text("listview2 con"),
-                      height: 100,
-                    ),
-                  ]),
-            Container(
-              color: Colors.purple.shade200,
-              child: Text("TextContainer 6 "),
-              height: 190,
-            ),
-            Container(
-              color: Colors.yellow.shade600,
-              child: Text("TextContainer 7 "),
-              height: 190,
-            ),
-          ],
+        // itemCount: li.length,
+         itemCount: mobile.length,
+          itemBuilder: (context, i) {
+            return ListTile(
+              leading: Icon(Icons.phone_android),
+              isThreeLine: true,
+              title : Text("${mobile[i]['name']}"),
+              subtitle: Text(mobile[i]['cpu']),
+              trailing: Text("screen : ${mobile[i]['screen']}"),
+            );
+          },
         ));
   }
 }
+
+
+//ListViewBuilder = ListView + loop
