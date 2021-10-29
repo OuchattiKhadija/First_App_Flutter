@@ -2,7 +2,10 @@
 
 import 'package:flutter/material.dart';
 //import 'package:flutter_application_2/test.dart';
-import 'package:flutter_application_2/otherWidget.dart';
+//import 'package:flutter_application_2/otherWidget.dart';
+import 'package:flutter_application_2/widgetFromDrawerPart.dart';
+
+
 void main() {
   runApp(MyApp());
 }
@@ -11,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Other(),
+      home: FromDrawerPart(),
     );
   }
 }

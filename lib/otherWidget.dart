@@ -69,6 +69,7 @@ class _OtherState extends State<Other> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
         appBar: AppBar(),
         drawer: Drawer(),
         body: GridView.count(crossAxisCount:4,
@@ -98,4 +99,4 @@ class _OtherState extends State<Other> {
 
 //GridViewBuilder = GridView + loop
 
-//ListGenerate => loop like for /while
+//ListGenerate => loop like for / while
