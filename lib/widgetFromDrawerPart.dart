@@ -9,7 +9,15 @@ class FromDrawerPart extends StatefulWidget {
   _FromDrawerPartState createState() => _FromDrawerPartState();
 }
 
-class _FromDrawerPartState extends State<FromDrawerPart> {
+class _FromDrawerPartState extends State<FromDrawerPart>
+    with SingleTickerProviderStateMixin {
+  TabController? myconroller;
+  @override
+  void initState() {
+    myconroller = TabController(length: 10, vsync: this, initialIndex: 5);
+    super.initState();
+  }
+
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -18,9 +26,12 @@ class _FromDrawerPartState extends State<FromDrawerPart> {
       key: scaffoldKey,
       appBar: AppBar(
         title: Text("FromDrawer p 61"),
-        leading: IconButton(icon: Icon(Icons.arrow_back),onPressed: (){
-          print("back prssed");
-        },),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            print("back prssed");
+          },
+        ),
         actions: [
           IconButton(
               onPressed: () {
@@ -35,10 +46,32 @@ class _FromDrawerPartState extends State<FromDrawerPart> {
         ],
         backgroundColor: Colors.cyan,
 //        centerTitle: true,
+        bottom: TabBar(
+            controller: myconroller,
+            isScrollable: true,
+            indicatorColor: Colors.white,
+            indicatorWeight: 4,
+            //padding: EdgeInsets.only(bottom: 5),
+            //  labelColor: Colors.red,
+            labelStyle: TextStyle(fontSize:16,letterSpacing: 2),
+          onTap: (index){
+            print(index);
+          },
+            tabs: [
+              Tab(icon: Icon(Icons.text_snippet), child: Text("Tab   1")),
+              Tab(child: Text("Tab   2")),
+              Tab(child: Text("Tab   3")),
+              Tab(child: Text("Tab   4")),
+              Tab(child: Text("Tab   5")),
+              Tab(child: Text("Tab   6")),
+              Tab(child: Text("Tab   7")),
+              Tab(child: Text("Tab   8")),
+              Tab(child: Text("Tab   9")),
+              Tab(child: Text("Tab   10")),
+            ]),
       ),
       drawerScrimColor: Colors.transparent,
       drawer: Drawer(
-        
         child: Column(
           children: [
             UserAccountsDrawerHeader(
@@ -84,18 +117,18 @@ class _FromDrawerPartState extends State<FromDrawerPart> {
           ],
         ),
       ),
-      body: Container(
-          alignment: Alignment.center,
-          width: double.infinity,
-          padding: EdgeInsets.all(10),
-          child:Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-             Text("Text"),
-             ElevatedButton(onPressed: (){
-                scaffoldKey.currentState!.openDrawer();
-             },child: Text("Open Drawer"),)
-          ],)),
+      body: TabBarView(controller: myconroller, children: [
+        Text("tab1"),
+        Text("tab2"),
+        Text("tab3"),
+        Text("tab4"),
+        Text("tab5"),
+        Text("tab1"),
+        Text("tab2"),
+        Text("tab3"),
+        Text("tab4"),
+        Text("tab5"),
+      ]),
     );
   }
 }
